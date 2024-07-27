@@ -1,4 +1,4 @@
-import { loadData } from "./Menu.js";
+import { loadData } from "./services/Menu.js";
 import Store from "./services/Store.js";
 
 window.app = {};
