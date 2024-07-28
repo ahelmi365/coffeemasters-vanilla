@@ -23,7 +23,9 @@ export class MenuPage extends HTMLElement {
       console.log("menu changed");
       this.render();
     });
+    this.render();
   }
+
   render() {
     if (app.store.menu) {
       this.root.querySelector("#menu").innerHTML = "";
