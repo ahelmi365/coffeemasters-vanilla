@@ -16,7 +16,6 @@ document.addEventListener("DOMContentLoaded", async (event) => {
   console.log("DOM-Content Loaded!");
   app.router.init();
   await loadData();
-  console.log(app.store.menu);
 
   // app.router.go("/");
 });
