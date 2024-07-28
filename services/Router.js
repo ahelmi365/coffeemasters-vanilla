@@ -25,32 +25,34 @@ const Router = {
     }
 
     let pageElement = null;
+    let pageTemplate = null;
     switch (route) {
       case "/":
-        pageElement = document.createElement("h1");
-        pageElement.textContent = "Menu";
+        pageElement = document.createElement("menu-page");
         break;
 
       case "/order":
-        pageElement = document.createElement("h1");
-        pageElement.textContent = "Order";
+        pageElement = document.createElement("order-page");
+
         break;
 
       default:
         if (route.startsWith("/product-")) {
-          pageElement = document.createElement("h1");
+          pageElement = document.createElement("details-page");
           const productId = route.split("-")[1];
           pageElement.dataset.id = productId;
-          pageElement.textContent = "Details product";
         }
         break;
     }
-    const mainElement = document.querySelector("main");
 
-    mainElement.innerHTML = "";
-    mainElement.append(pageElement);
-    window.scrollX = 0;
-    window.scrollY = 0;
+    if (pageElement) {
+      const mainElement = document.querySelector("main");
+
+      mainElement.innerHTML = "";
+      mainElement.append(pageElement);
+      window.scrollX = 0;
+      window.scrollY = 0;
+    }
   },
 };
 
